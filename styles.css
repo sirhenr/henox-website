@@ -155,3 +155,17 @@ footer {
 .cta-button:hover {
     background-color: #0066cc;
 }
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #004080;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0066cc;
+}
