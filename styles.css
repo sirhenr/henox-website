@@ -19,20 +19,22 @@ nav a {
     text-decoration: none;
 }
 
-.hero-gallery {
+.hero {
+    background-color: #e0f0ff;
     text-align: center;
-    padding: 20px;
+    padding: 50px 20px;
 }
 
-.hero-image-small {
-    max-width: 60%;
+.hero-image {
+    max-width: 100%;
     height: auto;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-.hero-image-small:hover {
+.hero-image:hover {
     transform: scale(1.05);
 }
 
@@ -53,31 +55,9 @@ nav a {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.image-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    justify-content: center;
-}
-
-.card-image {
-    max-width: 48%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-}
-
-.card-image:hover {
-    transform: scale(1.02);
-}
-
 footer {
     background-color: #004080;
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
