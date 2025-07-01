@@ -40,9 +40,9 @@ nav a {
 }
 
 .section {
-    max-width: 800px;  /* Controls width */
-    margin: 0 auto;    /* Centers the section */
-    padding: 20px;     /* Keeps spacing */
+    max-width: 800px;   /* Controls section width */
+    margin: 0 auto;     /* Centers the section */
+    padding: 20px;
 }
 
 .services {
