@@ -121,3 +121,23 @@ footer {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
 }
+.image-row {
+    display: flex;
+    flex-wrap: wrap; /* Makes sure images don't overflow on small screens */
+    gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center; /* Center the images */
+}
+
+.card-image {
+    width: 45%;  /* Controls image size on large screens */
+    max-width: 300px;  /* Prevents images from being too big */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.card-image:hover {
+    transform: scale(1.02);
+}
