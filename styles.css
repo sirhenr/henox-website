@@ -4,7 +4,10 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    font-size: 14px; /* Reduced font size for the whole website */
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the entire page horizontally */
 }
 
 header {
@@ -12,6 +15,7 @@ header {
     color: white;
     padding: 15px;
     text-align: center;
+    width: 100%; /* Full width header */
 }
 
 nav a {
@@ -24,6 +28,7 @@ nav a {
     background-color: #e0f0ff;
     text-align: center;
     padding: 50px 20px;
+    width: 100%;
 }
 
 .hero-image {
@@ -40,9 +45,13 @@ nav a {
 }
 
 .section {
-    max-width: 800px;   /* Controls section width */
-    margin: 0 auto;     /* Centers the section */
+    max-width: 800px;  /* Controls section width */
+    width: 90%;        /* Responsive width on small screens */
+    background-color: white;
+    margin: 20px 0;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .services {
@@ -61,7 +70,7 @@ nav a {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adds spacing between form elements */
+    gap: 10px;
 }
 
 input[type="text"], input[type="email"], textarea {
@@ -69,7 +78,7 @@ input[type="text"], input[type="email"], textarea {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't overflow */
+    box-sizing: border-box;
 }
 
 button {
@@ -96,4 +105,5 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    width: 100%; /* Footer spans full width */
 }
