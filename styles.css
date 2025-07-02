@@ -280,3 +280,18 @@ form button:hover {
     justify-content: center;
     margin-bottom: 10px;
 }
+/* Make the Consultancy card span two columns */
+.consultancy-card {
+    grid-column: span 2; /* if using CSS grid */
+    flex: 1 1 100%;      /* if using flexbox */
+    max-width: 100%;     /* ensure it takes full row */
+    padding: 15px;       /* slightly reduced padding */
+    min-height: auto;    /* allow auto height based on content */
+}
+
+/* Optional: Adjust image size inside consultancy card */
+.consultancy-card img {
+    width: 100%;
+    max-height: 200px; /* reduce image height */
+    object-fit: cover;
+}
