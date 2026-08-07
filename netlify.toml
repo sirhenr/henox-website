@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist/public"
+
+# Client-side routing (Wouter) needs every path to fall back to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
