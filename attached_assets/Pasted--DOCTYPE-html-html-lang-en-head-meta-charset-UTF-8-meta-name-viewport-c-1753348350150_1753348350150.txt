@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Henox</title>
+    <meta name="description" content="Explore all the digitization, EDMS, registry, destruction and consultancy services Henox offers to modernize your records." />
+    <meta name="keywords" content="Backlog Scanning, EDMS Setup, Document Destruction, File Registry, IT Consultancy Kenya, Henox Services" />
+    <meta name="author" content="Henox Business Consultant Limited" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <img src="logo.png" alt="Henox Logo" style="height:50px; vertical-align: middle;" />
+    <h1 style="display:inline; margin-left: 10px;">Henox Business Consultant Limited</h1>
+    <nav id="main-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h2>Our IT & Document Management Services</h2>
+    <div class="services">
+
+        <!-- Backlog Scanning -->
+        <div class="service-card">
+            <img src="ricoh-scanner.jpg" alt="Backlog Scanning" class="card-image" />
+            <h3>Backlog Scanning</h3>
+            <p>Efficiently convert years of paper records into searchable digital files using high-speed scanners like the Ricoh fi-8170. Fast, accurate, and secure for any business scale.</p>
+            <a href="https://wa.me/254793382838?text=I'm%20interested%20in%20Backlog%20Scanning" target="_blank" class="cta-button">Request Quote</a>
+        </div>
+
+        <!-- EDMS Installation -->
+        <div class="service-card">
+            <img src="document capture software.jpg" alt="EDMS Installation" class="card-image" />
+            <h3>EDMS Installation</h3>
+            <p>Deploy powerful Electronic Document Management Systems to organize, store, and retrieve documents with ease — from capture to workflow automation.</p>
+            <a href="https://wa.me/254793382838?text=I'm%20interested%20in%20EDMS%20Installation" target="_blank" class="cta-button">Request Quote</a>
+        </div>
+
+        <!-- Document Destruction -->
+        <div class="service-card">
+            <img src="Paper shredding.jpg" alt="Document Destruction" class="card-image" />
+            <h3>Document Destruction</h3>
+            <p>Secure shredding and certified disposal of sensitive records to prevent data breaches and ensure compliance with privacy standards.</p>
+            <a href="https://wa.me/254793382838?text=I'm%20interested%20in%20Document%20Destruction" target="_blank" class="cta-button">Request Quote</a>
+        </div>
+
+        <!-- File Registry Arrangement -->
+        <div class="service-card">
+            <img src="Arranged Registry.jpg" alt="File Registry Arrangement" class="card-image" />
+            <h3>File Registry Arrangement</h3>
+            <p>Modernize your physical filing system with professional registry arrangement, indexing, and labeling — improving accessibility and reducing clutter.</p>
+            <a href="https://wa.me/254793382838?text=I'm%20interested%20in%20File%20Registry%20Arrangement" target="_blank" class="cta-button">Request Quote</a>
+        </div>
+
+        <!-- Consultancy Services -->
+        <div class="service-card consultancy-card">
+            <img src="consultancy-meeting.jpg" alt="Consultancy Services" class="card-image" />
+            <h3>Consultancy Services</h3>
+            <p>Get expert guidance in digitization strategy, EDMS planning, compliance, and workflow optimization. Henox consultancy empowers you to make the right tech decisions for your document lifecycle.</p>
+            <ul>
+                <li>✔️ Strategy planning & process mapping</li>
+                <li>✔️ Budgeting, selection & implementation support</li>
+                <li>✔️ Compliance, training & post-deployment help</li>
+            </ul>
+            <a href="https://wa.me/254793382838?text=I'm%20interested%20in%20Consultancy%20Services" target="_blank" class="cta-button">Request Quote</a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Henox Business Consultant Limited | Nairobi, Kenya</p>
+    <div>
+        <a href="https://wa.me/254793382838" target="_blank">WhatsApp</a> |
+        <a href="https://facebook.com/henoxbusiness" target="_blank">Facebook</a> |
+        <a href="https://linkedin.com/company/henoxbusiness" target="_blank">LinkedIn</a>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("main-menu").classList.toggle("active");
+}
+
+// Smooth image fade-in
+window.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".card-image").forEach((img, i) => {
+        setTimeout(() => img.classList.add("visible"), i * 150);
+    });
+});
+</script>
+
+</body>
+</html>
