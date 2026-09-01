@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/hero";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { Industries } from "@/components/sections/industries";
 import { Testimonials } from "@/components/sections/testimonials";
 import { QuoteCalculator } from "@/components/sections/quote-calculator";
 import { ContactForm } from "@/components/sections/contact-form";
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <ServicesGrid />
+        <Industries />
         <Testimonials />
         <QuoteCalculator />
         <ContactForm />

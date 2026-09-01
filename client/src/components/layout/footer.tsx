@@ -1,172 +1,47 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import logoImage from "@assets/hbc1logo_1764602992438.png";
+import { siteConfig, whatsappLink } from "@/config/site";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
-  const quickLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" }
-  ];
-
   const services = [
-    { href: "#backlog-scanning", label: "Document Scanning" },
-    { href: "#edms-installation", label: "EDMS Installation" },
-    { href: "#document-destruction", label: "Document Destruction" },
-    { href: "#file-registry", label: "File Registry" }
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" }
+    "Document Digitization",
+    "Data Capture & Indexing",
+    "EDMS & Records Management",
+    "Workflow Automation",
+    "Records & Archive Management",
+    "Secure Document Disposal",
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
-      {/* Main Footer Content */}
+    <footer className="bg-gray-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-6">
-            <div className="flex items-center">
-              <img 
-                src={logoImage} 
-                alt="Henox Business Consultants" 
-                className="h-14 w-auto object-contain brightness-0 invert"
-              />
-            </div>
-            <p className="text-gray-300 leading-relaxed">
-              Kenya's premier document digitization specialists, transforming businesses through cutting-edge technology and expert solutions.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label={social.label}
-                  >
-                    <IconComponent size={18} />
-                  </a>
-                );
-              })}
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="space-y-5">
+            <img src={logoImage} alt={siteConfig.company.name} className="h-14 w-auto object-contain brightness-0 invert" />
+            <p className="text-gray-300 leading-relaxed">{siteConfig.company.tagline} for organizations across East Africa.</p>
+            <p className="text-sm text-gray-400">A practical partner for turning records, information and workflows into better business operations.</p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-300 hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div><h3 className="text-lg font-semibold mb-5">Explore</h3><ul className="space-y-3">{siteConfig.nav.map((item) => <li key={item.href}><Link href={item.href} className="text-gray-300 hover:text-accent transition-colors">{item.label}</Link></li>)}</ul></div>
 
-          {/* Services */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Our Services</h4>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <a 
-                    href={service.href}
-                    className="text-gray-300 hover:text-accent transition-colors"
-                  >
-                    {service.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div><h3 className="text-lg font-semibold mb-5">Solutions</h3><ul className="space-y-3">{services.map((service) => <li key={service}><Link href="/services" className="text-gray-300 hover:text-accent transition-colors">{service}</Link></li>)}</ul></div>
 
-          {/* Contact Info */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Contact Us</h4>
+          <div className="space-y-5">
+            <h3 className="text-lg font-semibold">Contact</h3>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin className="text-accent mt-1 flex-shrink-0" size={18} />
-                <div>
-                  <p className="text-gray-300">Nairobi, Kenya</p>
-                  <p className="text-sm text-gray-400">Nationwide service available</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="text-accent flex-shrink-0" size={18} />
-                <a 
-                  href="tel:+254793382838"
-                  className="text-gray-300 hover:text-accent transition-colors"
-                >
-                  +254 793 382 838
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="text-accent flex-shrink-0" size={18} />
-                <a 
-                  href="mailto:info@henoxbusiness.co.ke"
-                  className="text-gray-300 hover:text-accent transition-colors"
-                >
-                  info@henoxbusiness.co.ke
-                </a>
-              </div>
+              <div className="flex items-start gap-3"><MapPin className="text-accent mt-1 flex-shrink-0" size={18} /><div><p className="text-gray-300">{siteConfig.contact.primaryOffice}</p><p className="text-sm text-gray-400">Regional project coverage</p></div></div>
+              <a href={`tel:${siteConfig.contact.phone}`} className="flex items-center gap-3 text-gray-300 hover:text-accent"><Phone className="text-accent" size={18} />{siteConfig.contact.phoneDisplay}</a>
+              <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-3 text-gray-300 hover:text-accent"><Mail className="text-accent" size={18} />{siteConfig.contact.email}</a>
             </div>
-            
-            <Button 
-              asChild 
-              className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white"
-            >
-              <a
-                href="https://wa.me/254793382838"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <SiWhatsapp size={16} className="mr-2" />
-                Chat on WhatsApp
-              </a>
-            </Button>
+            <Button asChild className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white"><a href={whatsappLink()} target="_blank" rel="noopener noreferrer"><SiWhatsapp className="mr-2" size={16} />Chat on WhatsApp</a></Button>
           </div>
         </div>
       </div>
-
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-center md:text-left">
-              <p className="text-gray-400 text-sm">
-                © {currentYear} Henox Business Consultant Limited. All rights reserved.
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-accent transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-accent transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-accent transition-colors">
-                Cookie Policy
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="border-t border-gray-800"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between gap-3 text-sm text-gray-400"><p>© {currentYear} {siteConfig.company.name}. All rights reserved.</p><p>Serving organizations across East Africa.</p></div></div>
     </footer>
   );
 }
