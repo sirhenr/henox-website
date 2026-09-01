@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -13,10 +13,9 @@ import Services from "@/pages/services";
 import Contact from "@/pages/contact";
 import NotFound from "@/pages/not-found";
 
-function Router() {
-  // Track page views when routes change
+function AppRoutes() {
   useAnalytics();
-  
+
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -29,20 +28,24 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
   useEffect(() => {
-    // Verify required environment variable is present
     if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
-      console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');
+      console.warn("Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID");
     } else {
       initGA();
     }
   }, []);
 
+  // GitHub Pages serves this project from /henox-website/, while local
+  // development runs from /. Let Wouter use Vite's deployment base path.
+  const routerBase = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Router />
+        <WouterRouter base={routerBase}>
+          <AppRoutes />
+        </WouterRouter>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
