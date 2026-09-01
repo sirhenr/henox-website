@@ -5,7 +5,12 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? "/henox-website/" : "/",
-  plugins: [react(), runtimeErrorOverlay()],
+  plugins: [
+    react(),
+    ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
+      ? [runtimeErrorOverlay()]
+      : []),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -14,5 +19,8 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  build: { outDir: path.resolve(import.meta.dirname, "dist"), emptyOutDir: true },
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist"),
+    emptyOutDir: true,
+  },
 });
