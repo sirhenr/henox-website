@@ -29,12 +29,21 @@ export function ContactForm() {
   const { toast } = useToast();
   const form = useForm<ContactFormData>({ resolver: zodResolver(schema), defaultValues: { name: "", email: "", phone: "", service: "", message: "" } });
 
-  const encode = (data: Record<string, string>) => Object.entries(data).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join("&");
-
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "contact", name: data.name, email: data.email, phone: data.phone || "", service: data.service || "", message: data.message }) });
+      const response = await fetch("https://formspree.io/f/mvgrlkbl", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || "",
+          service: data.service || "",
+          message: data.message,
+        }),
+      });
+      if (!response.ok) throw new Error("Formspree request failed");
       trackEvent("contact_form_submit", "lead", data.service || "general");
       toast({ title: "Enquiry received", description: "Thank you. The Henox team will get back to you shortly." });
       form.reset();
