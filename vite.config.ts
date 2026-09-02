@@ -4,7 +4,9 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? "/henox-website/" : "/",
+  // GitHub Pages passes /henox-website/ explicitly. Traditional hosts
+  // (InfinityFree, cPanel, etc.) use the domain root by default.
+  base: process.env.VITE_BASE_PATH || "/",
   plugins: [
     react(),
     ...(process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined
